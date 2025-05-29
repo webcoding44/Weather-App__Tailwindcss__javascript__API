@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <style>
+         @font-face { font-family: roboto; src: url('/Fonts/Roboto-Regular.ttf');}
+        .form {
+        --width-of-input: 350px;
+        --border-height: 1px;
+        --border-before-color: rgba(221, 221, 221, 0.39);
+        --border-after-color: #5891ff;
+        --input-hovered-color: #4985e01f;
+        position: relative;
+        width: var(--width-of-input);
+        margin: 30px 130px;
+        position: absolute;
+        }
+        .input {
+        border-bottom: var(--border-height) solid var(--border-before-color);        
+        }
+        .input-border {
+        background: var(--border-after-color);
+        }
+        input:hover {
+        background: var(--input-hovered-color);
+        }
+        input:focus ~ .input-border {
+        width: 100%;
+        }
+    </style>
+</head>
+<body class="m-0 p-0 border-box font-roboto bg-[url('images/1.jpg')] bg-cover min-h-screen flex justify-center items-center">
+
+    <div class="h-[450px] w-[850px] flex flex-row">
+        <div class="w-1/2 h-full bg-[url('images/2.jpg')] bg-cover bg-center">
+            <h1 class="text-gray-300 text-2xl m-10 absolute">دریافت اطلاعات هواشناسی</h1>
+            <h2 class="text-gray-300 text-xl m-16 leading-[50px]">Javascript Weather App</h2>
+        </div>
+        <div class="w-8/12 h-full bg-gray-700">
+            <div class="form">
+            <input id="cityinput" class="input focus:outline-none text-[#fff] px-[0.5em] py-[0.7em] text-[0.9rem] w-full border-box border-none bg-transparent" dir="rtl" placeholder="نام شهر را به انگیلسی وارد کنید" required="" type="text">
+            <span class="input-border absolute w-0 h-[2px] bottom-0 left-0 transition-all 0.3s"></span>
+            </div>
+            <input class="h-[3rem] w-[5.5rem] rounded-[5px] m-6 text-gray-400 border-b cursor-pointer border-gray-500" type="submit" id="submit" value="ثبت">
+            <div class="w-96 absolute h-64 flex justify-center items-center flex-col space-y-3 mt-10 mx-16">
+            <h2 class="text-3xl text-green-400" id="cityoutput"></h2>
+            <p class="text-green-400" id="description"></p>
+            <p class="text-green-400" id="temp"></p>
+            <p class="text-green-400"id="wind"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
